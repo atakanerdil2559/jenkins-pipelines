@@ -6,10 +6,10 @@ node {
 		// Below line triggers this job every minute
 		pipelineTriggers([pollSCM('* * * * *')]),
 		parameters([choice(choices: [
-			'dev1.acirrustech.com', 
-			'qa1.acirrustech.com', 
-			'stage1.acirrustech.com', 
-			'prod1.acirrustech.com'], 
+			'dev1.atakanerdil.com', 
+			'qa1.atakanerdil.com', 
+			'stage1.atakanerdil.com', 
+			'prod1.atakanerdil.com'], 
 			description: 'Please choose an environment', 
 			name: 'ENVIR')]), 
 		])
