@@ -19,6 +19,7 @@ node {
 				echo "File not found!"
 				echo "Creating a folder"
 				mkdir "/tmp/foo.txt"
+                ls -l /tmp
 			fi
 		'''
 	}
