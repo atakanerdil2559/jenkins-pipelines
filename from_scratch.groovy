@@ -5,13 +5,26 @@ node {
 		disableConcurrentBuilds(),
 		// Below line triggers this job every minute
 		pipelineTriggers([pollSCM('* * * * *')]),
-		parameters([choice(choices: [
+		parameters([
+			// Asks for Environment to Build
+			choice(choices: [
 			'dev1.atakanerdil.com', 
 			'qa1.atakanerdil.com', 
 			'stage1.atakanerdil.com', 
 			'prod1.atakanerdil.com'], 
 			description: 'Please choose an environment', 
-			name: 'ENVIR')]), 
+			name: 'ENVIR'),
+
+			// Asks for version
+			choice(choices: [
+				'v0.1', 
+				'v0.2', 
+				'v0.3', 
+				'v0.4', 
+				'v0.5'], 
+			description: 'Which version should we deploy?', 
+			name: 'Version')
+			])
 		])
 
 		// Pulls a repo from developer
