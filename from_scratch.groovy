@@ -1,3 +1,4 @@
+  
 node {
 	properties([
 		// Below line sets "Discard Builds more than 5"
@@ -34,7 +35,6 @@ node {
 			trim: true)
 			])
 		])
-
 
 		// Pulls a repo from developer
 	stage("Pull Repo"){
