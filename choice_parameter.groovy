@@ -10,6 +10,7 @@ properties(
 	stage("Stage2"){
 		git 'https://github.com/farrukh90/packer.git'
 }
+
 	stage("Stage2"){
 		echo "hello"
 }
