@@ -1,4 +1,3 @@
-  
 node {
 	properties([
 		// Below line sets "Discard Builds more than 5"
