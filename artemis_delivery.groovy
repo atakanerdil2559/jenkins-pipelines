@@ -17,10 +17,10 @@ properties(
 		name: 'Version'), 
 	choice(choices: 
 	[
-		'dev1.acirrustech.com', 
-		'qa1.acirrustech.com', 
-		'stage1.acirrustech.com', 
-		'prod1.acirrustech.com'], 
+		'dev1.atakanerdil.com', 
+		'qa1.atakanerdil.com', 
+		'stage1.atakanerdil.com', 
+		'prod1.atakanerdil.com'], 
 	description: 'Please provide an environment to build the application', 
 	name: 'ENVIR')])])
 
@@ -40,7 +40,7 @@ properties(
 		timestamps {
 			ws{
 				sh '''
-					aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 713287746880.dkr.ecr.us-east-1.amazonaws.com/artemis
+					aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 337879762040.dkr.ecr.us-east-1.amazonaws.com/artemis
 					'''
 				}
 			}
