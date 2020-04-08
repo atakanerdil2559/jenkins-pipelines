@@ -40,7 +40,7 @@ node {
 		timestamps {
 			ws {
 				sh '''
-                    docker tag artemis:${Version} 945548589381.dkr.ecr.us-east-1.amazonaws.com/artemis:${Version}
+                    docker tag artemis:${Version} 337879762040.dkr.ecr.eu-west-2.amazonaws.com/artemis:${Version}
                     '''
 				}
 			}
@@ -49,7 +49,7 @@ node {
 	    timestamps {
 			ws {
 				sh '''
-					docker push 945548589381.dkr.ecr.us-east-1.amazonaws.com/artemis:${Version}
+					docker push 337879762040.dkr.ecr.eu-west-2.amazonaws.com/artemis:${Version}
 					'''
 				}
 			}
