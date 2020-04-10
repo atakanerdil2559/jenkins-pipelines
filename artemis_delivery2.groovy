@@ -12,6 +12,7 @@ properties(
 		name: 'Version'), 
 	choice(choices: 
 	[
+        
 		'dev1.atakanerdil.com', 
 		'qa1.atakanerdil.com', 
 		'stage1.atakanerdil.com', 
