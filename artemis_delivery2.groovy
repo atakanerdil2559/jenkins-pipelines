@@ -70,6 +70,7 @@ properties(
         }
     
     }
+    
     		stage("Clean Up"){
 			timestamps {
 				ws {
