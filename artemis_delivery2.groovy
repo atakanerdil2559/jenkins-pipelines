@@ -66,15 +66,7 @@ node {
 				}
 			}
 		}
-		stage("Authenticate"){
-			timestamps {
-				ws {
-					sh '''
-						ssh centos@dev1.atakanerdil.com $(aws ecr get-login --no-include-email --region eu-west-2)
-						'''
-				}
-			}
-		}
+		
 		stage("Clean Up"){
 			timestamps {
 				ws {
