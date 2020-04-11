@@ -19,7 +19,7 @@ node {
 		stage("Stage1"){
 			timestamps {
 				ws {
-				checkout([$class: 'GitSCM', branches: [[name: '${Version}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/farrukh90/artemis.git']]])
+					checkout([$class: 'GitSCM', branches: [[name: '${Version}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/farrukh90/artemis.git']]]) }
 			}
 		}
 		stage("Get Credentials"){
@@ -27,6 +27,7 @@ node {
 			ws{
 				sh '''
 					aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 337879762040.dkr.ecr.us-east-1.amazonaws.com/artemis
+
 					'''
 				}
 			}
@@ -44,7 +45,7 @@ node {
 			timestamps {
 				ws {
 					sh '''
-                    docker tag artemis:${Version} 337879762040.dkr.ecr.us-east-1.amazonaws.com/artemis:${Version}
+						docker tag artemis:${Version} 337879762040.dkr.ecr.us-east-1.amazonaws.com/artemis:${Version}
 					'''
 					}
 				}
@@ -53,7 +54,7 @@ node {
 			timestamps {
 				ws {
 					sh '''
-					docker push 337879762040.dkr.ecr.us-east-1.amazonaws.com/artemis:${Version}
+						docker push 337879762040.dkr.ecr.us-east-1.amazonaws.com/artemis:${Version}
 						'''
 				}
 			}
@@ -100,8 +101,7 @@ node {
 				sh '''
 					ssh centos@dev1.atakanerdil.com docker run -dti -p 5001:5000 337879762040.dkr.ecr.us-east-1.amazonaws.com/artemis:${Version}
 					'''
-				}
-			}
-		}
+            }
+        }
     }
 }
